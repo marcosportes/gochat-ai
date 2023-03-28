@@ -13,7 +13,7 @@ func main() {
 	// Your API Key
 	// Define your environment variable or directly replace with the keys
 	apiKey := os.Getenv("OPENAI_API_KEY")
-    organization := os.Getenv("OPENAI_ORGANIZATION")
+	organization := os.Getenv("OPENAI_ORGANIZATION")
 
 	// Message to ChatGPT
 	input := "a brief summary of The Lord of the Rings"
