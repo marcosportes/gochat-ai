@@ -6,12 +6,14 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 func main() {
 	// Your API Key
-	apiKey := "your-api-kay"
-	organization := "org=key"
+	// Define your environment variable or directly replace with the keys
+	apiKey := os.Getenv("OPENAI_API_KEY")
+    organization := os.Getenv("OPENAI_ORGANIZATION")
 
 	// Message to ChatGPT
 	input := "a brief summary of The Lord of the Rings"
