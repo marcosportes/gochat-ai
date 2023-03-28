@@ -18,6 +18,8 @@ func main() {
 	// Message to ChatGPT
 	input := "a brief summary of The Lord of the Rings"
 
+	fmt.Println("Inserted request: \n",input)
+
 	// Building a HTTP POST request
 	requestBody, err := json.Marshal(map[string]interface{}{
 		"model":       "text-davinci-003",
