@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"bufio"
 )
 
 func main() {
@@ -16,8 +17,11 @@ func main() {
 	organization := os.Getenv("OPENAI_ORGANIZATION")
 
 	// Message to ChatGPT
-	input := "a brief summary of The Lord of the Rings"
-
+	var input string
+	fmt.Println("Send a message: ")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	input = scanner.Text()
 	fmt.Println("Inserted request: \n",input)
 
 	// Building a HTTP POST request
@@ -25,7 +29,7 @@ func main() {
 		"model":       "text-davinci-003",
 		"prompt":      input,
 		"max_tokens":  4000,
-		"temperature": 1.0,
+		"temperature": 0.9,
 	})
 	if err != nil {
 		fmt.Println("Error building request body: ", err.Error())
